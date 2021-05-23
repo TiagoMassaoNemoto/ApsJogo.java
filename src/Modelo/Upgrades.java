@@ -16,7 +16,7 @@ public class Upgrades extends absPropriedade
                 this.countadd = 1;
         
         if (this.tipoUpgrade == "Upgrade1")
-            this.valorUpgrade = 1 * (int)Math.pow(2,(double)this.quantUpgrade); //Valor do Upgrade1
+            this.valorUpgrade = 1 * (int)Math.pow(3,(double)this.quantUpgrade); //Valor do Upgrade1
         
         if (this.tipoUpgrade == "Upgrade1" && this.count >= this.valorUpgrade)
         {
@@ -34,7 +34,7 @@ public class Upgrades extends absPropriedade
                 this.countadd = 1;
         
         if (this.tipoUpgrade == "Upgrade2")
-            this.valorUpgrade = 10 * (int)Math.pow(2,(double)this.quantUpgrade); //Valor do Upgrade2
+            this.valorUpgrade = 10 * (int)Math.pow(3,(double)this.quantUpgrade); //Valor do Upgrade2
         
         if (this.tipoUpgrade == "Upgrade2" && this.count >= this.valorUpgrade)
         {

@@ -78,10 +78,10 @@ public class frmJogo extends javax.swing.JFrame
                 ImageMouseClicked(evt);
             }
         });
-        getContentPane().add(Image, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, 510));
+        getContentPane().add(Image, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 10, -1, 490));
 
         lblMoedas.setText("Moedas:0");
-        getContentPane().add(lblMoedas, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 420, 128, 46));
+        getContentPane().add(lblMoedas, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 560, 128, 46));
 
         btnUpgrade1.setText("<html><big>Terra adubada</big><br><small>Cost:1</small></html>");
         btnUpgrade1.addActionListener(new java.awt.event.ActionListener()
@@ -101,7 +101,7 @@ public class frmJogo extends javax.swing.JFrame
                 btnFinishActionPerformed(evt);
             }
         });
-        getContentPane().add(btnFinish, new org.netbeans.lib.awtextra.AbsoluteConstraints(735, 305, 230, 90));
+        getContentPane().add(btnFinish, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 510, 230, 90));
 
         btnEvoluir.setText("Evoluir");
         btnEvoluir.addActionListener(new java.awt.event.ActionListener()
@@ -111,7 +111,7 @@ public class frmJogo extends javax.swing.JFrame
                 btnEvoluirActionPerformed(evt);
             }
         });
-        getContentPane().add(btnEvoluir, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 520, 180, 80));
+        getContentPane().add(btnEvoluir, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 520, 180, 80));
 
         btnUpgrade2.setText("<html><big>Fertilizante</big><br><small>Cost:10</small></html>");
         btnUpgrade2.addActionListener(new java.awt.event.ActionListener()
@@ -134,28 +134,28 @@ public class frmJogo extends javax.swing.JFrame
         {
             this.count = controle.count;
             //Condição Botão Upgrade
-            if (count >= 1 * (int)Math.pow(2,(double)this.quantUpgrade1))
+            if (count >= 1 * (int)Math.pow(3,(double)this.quantUpgrade1))
                 btnUpgrade1.setEnabled(true);
             
-            if (count >= 10 * (int)Math.pow(2,(double)this.quantUpgrade2) && estagio >= 1)
+            if (count >= 10 * (int)Math.pow(3,(double)this.quantUpgrade2) && estagio >= 1)
                 btnUpgrade2.setEnabled(true);
             //Condição Botão Evoluir
-            if (count >= 10 && estagio < 1) //Quantidade necessaria de pontos para poder aparecer botão da primeira evolução
+            if (count >= 1000 && estagio < 1) //Quantidade necessaria de pontos para poder aparecer botão da primeira evolução
                 btnEvoluir.setVisible(true);
             
-            if (count >= 10 && estagio == 1)//Quantidade necessaria de pontos para poder aparecer botão da segunda evolução
+            if (count >= 10000 && estagio == 1)//Quantidade necessaria de pontos para poder aparecer botão da segunda evolução
                 btnEvoluir.setVisible(true);
             
-            if (count < 10 && estagio < 1) //Quantidade necessaria de pontos para poder aparecer botão da primeira evolução
+            if (count < 1000 && estagio < 1) //Quantidade necessaria de pontos para poder aparecer botão da primeira evolução
                 btnEvoluir.setEnabled(false);
             
-            else if (count < 10 && estagio == 1)//Quantidade necessaria de pontos para poder aparecer botão da segunda evolução
+            else if (count < 10000 && estagio == 1)//Quantidade necessaria de pontos para poder aparecer botão da segunda evolução
                 btnEvoluir.setEnabled(false);
             else
                 btnEvoluir.setEnabled(true);
             
             //Condição Botão Finalizar
-            if (count >= 100 && estagio == 2)//Quantidade necessaria de pontos para poder finalizar
+            if (count >= 100000 && estagio == 2)//Quantidade necessaria de pontos para poder finalizar
                 btnFinish.setVisible(true);
         }
         lblMoedas.setText(controle.ponto);
@@ -175,14 +175,14 @@ public class frmJogo extends javax.swing.JFrame
                 Image.setIcon(new javax.swing.ImageIcon("..\\ApsJogo.java-master\\src\\Images\\Estagio1.png"));
                 estagio = 1;
                 btnEvoluir.setVisible(false);
-                count = count - 10; //Preço para poder evoluir para o primeiro estagio (tem que estar com o msm valor da condição evoluir 1)
+                count = count - 1000; //Preço para poder evoluir para o primeiro estagio (tem que estar com o msm valor da condição evoluir 1)
                 lblMoedas.setText("Moedas:" + count);
                 break;
             case 1:
                 Image.setIcon(new javax.swing.ImageIcon("..\\ApsJogo.java-master\\src\\Images\\Estagio2.png"));
                 estagio = 2;
                 btnEvoluir.setVisible(false);
-                count = count - 10; //Preço para poder evoluir para o segundo estagio (tem que estar com o msm valor da condição evoluir 2)
+                count = count - 10000; //Preço para poder evoluir para o segundo estagio (tem que estar com o msm valor da condição evoluir 2)
                 lblMoedas.setText("Moedas:" + count);
                 break;
         }
@@ -202,16 +202,16 @@ public class frmJogo extends javax.swing.JFrame
         this.countadd = upgrades.countadd;
         this.count = upgrades.count;
         lblMoedas.setText(upgrades.ponto);
-        btnUpgrade1.setText("<html>" +  "<big>Terra adubada</big>" + "<br><small>" + "Cost:" + (1 * (int)Math.pow(2,(double)this.quantUpgrade1)) + "</small>" + "</html>");
+        btnUpgrade1.setText("<html>" +  "<big>Terra adubada</big>" + "<br><small>" + "Cost:" + (1 * (int)Math.pow(3,(double)this.quantUpgrade1)) + "</small>" + "</html>");
         
-        if (count <= 1 * (int)Math.pow(2,(double)this.quantUpgrade1))
+        if (count <= 1 * (int)Math.pow(3,(double)this.quantUpgrade1))
                 btnUpgrade1.setEnabled(false);
         
         //Condição Botão Evoluir
-            if (count < 10 && estagio < 1) //Quantidade necessaria de pontos para poder aparecer botão da primeira evolução
+            if (count < 1000 && estagio < 1) //Quantidade necessaria de pontos para poder aparecer botão da primeira evolução
                 btnEvoluir.setEnabled(false);
             
-            else if (count < 10 && estagio == 1)//Quantidade necessaria de pontos para poder aparecer botão da segunda evolução
+            else if (count < 10000 && estagio == 1)//Quantidade necessaria de pontos para poder aparecer botão da segunda evolução
                 btnEvoluir.setEnabled(false);
             else
                 btnEvoluir.setEnabled(true);
@@ -226,16 +226,16 @@ public class frmJogo extends javax.swing.JFrame
         this.countadd = upgrades.countadd;
         this.count = upgrades.count;
         lblMoedas.setText(upgrades.ponto);
-        btnUpgrade2.setText("<html>" +  "<big>Fertilizante</big>" + "<br><small>" + "Cost:" + (10 * (int)Math.pow(2,(double)this.quantUpgrade2)) + "</small>" + "</html>");
+        btnUpgrade2.setText("<html>" +  "<big>Fertilizante</big>" + "<br><small>" + "Cost:" + (10 * (int)Math.pow(3,(double)this.quantUpgrade2)) + "</small>" + "</html>");
         
-        if (count <= 10 * (int)Math.pow(2,(double)this.quantUpgrade2))
+        if (count <= 10 * (int)Math.pow(3,(double)this.quantUpgrade2))
                 btnUpgrade2.setEnabled(false);
         
         //Condição Botão Evoluir
-            if (count < 10 && estagio < 1) //Quantidade necessaria de pontos para poder aparecer botão da primeira evolução
+            if (count < 1000 && estagio < 1) //Quantidade necessaria de pontos para poder aparecer botão da primeira evolução
                 btnEvoluir.setEnabled(false);
             
-            else if (count < 10 && estagio == 1)//Quantidade necessaria de pontos para poder aparecer botão da segunda evolução
+            else if (count < 10000 && estagio == 1)//Quantidade necessaria de pontos para poder aparecer botão da segunda evolução
                 btnEvoluir.setEnabled(false);
             else
                 btnEvoluir.setEnabled(true);
