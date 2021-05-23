@@ -174,14 +174,14 @@ public class frmJogo extends javax.swing.JFrame
         switch (estagio)
         {
             case 0:
-                Image.setIcon(new javax.swing.ImageIcon("..\\prjAPSJOGO\\src\\Images\\Estagio1.png"));
+                Image.setIcon(new javax.swing.ImageIcon("..\\ApsJogo.java-master\\src\\Images\\Estagio1.png"));
                 estagio = 1;
                 btnEvoluir.setVisible(false);
                 count = count - 10; //Preço para poder evoluir para o primeiro estagio (tem que estar com o msm valor da condição evoluir 1)
                 lblMoedas.setText("Moedas:" + count);
                 break;
             case 1:
-                Image.setIcon(new javax.swing.ImageIcon("..\\prjAPSJOGO\\src\\Images\\Estagio2.png"));
+                Image.setIcon(new javax.swing.ImageIcon("..\\ApsJogo.java-master\\src\\Images\\Estagio1.png"));
                 estagio = 2;
                 btnEvoluir.setVisible(false);
                 count = count - 10; //Preço para poder evoluir para o segundo estagio (tem que estar com o msm valor da condição evoluir 2)
