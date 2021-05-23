@@ -137,7 +137,7 @@ public class frmJogo extends javax.swing.JFrame
             if (count >= 1 * (int)Math.pow(2,(double)this.quantUpgrade1))
                 btnUpgrade1.setEnabled(true);
             
-            if (count >= 10 * (int)Math.pow(2,(double)this.quantUpgrade2) && estagio == 1)
+            if (count >= 10 * (int)Math.pow(2,(double)this.quantUpgrade2) && estagio >= 1)
                 btnUpgrade2.setEnabled(true);
             //Condição Botão Evoluir
             if (count >= 10 && estagio < 1) //Quantidade necessaria de pontos para poder aparecer botão da primeira evolução
