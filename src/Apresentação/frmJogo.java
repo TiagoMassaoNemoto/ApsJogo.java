@@ -83,7 +83,7 @@ public class frmJogo extends javax.swing.JFrame
         lblMoedas.setText("Moedas:0");
         getContentPane().add(lblMoedas, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 420, 128, 46));
 
-        btnUpgrade1.setText("<html><big>Terra adubada</big><br><small>Cost:2</small></html>");
+        btnUpgrade1.setText("<html><big>Terra adubada</big><br><small>Cost:1</small></html>");
         btnUpgrade1.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
@@ -113,7 +113,7 @@ public class frmJogo extends javax.swing.JFrame
         });
         getContentPane().add(btnEvoluir, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 520, 180, 80));
 
-        btnUpgrade2.setText("<html><big>Fertilizante</big><br><small>Cost:20</small></html>");
+        btnUpgrade2.setText("<html><big>Fertilizante</big><br><small>Cost:10</small></html>");
         btnUpgrade2.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
@@ -134,8 +134,6 @@ public class frmJogo extends javax.swing.JFrame
         {
             this.count = controle.count;
             //Condição Botão Upgrade
-            if (this.quantUpgrade1 ==0)
-                this.quantUpgrade1 =1;
             if (count >= 1 * (int)Math.pow(2,(double)this.quantUpgrade1))
                 btnUpgrade1.setEnabled(true);
             
@@ -188,6 +186,12 @@ public class frmJogo extends javax.swing.JFrame
                 lblMoedas.setText("Moedas:" + count);
                 break;
         }
+        if (count <= 1 * (int)Math.pow(2,(double)this.quantUpgrade1))
+                btnUpgrade1.setEnabled(false);
+        
+        if (count <= 10 * (int)Math.pow(2,(double)this.quantUpgrade2))
+                btnUpgrade2.setEnabled(false);
+        
     }//GEN-LAST:event_btnEvoluirActionPerformed
 
     private void btnUpgrade1ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnUpgrade1ActionPerformed

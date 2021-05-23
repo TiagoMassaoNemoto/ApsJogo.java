@@ -56,7 +56,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnUpgrade1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;big&gt;Terra adubada&lt;/big&gt;&lt;br&gt;&lt;small&gt;Cost:2&lt;/small&gt;&lt;/html&gt;"/>
+        <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;big&gt;Terra adubada&lt;/big&gt;&lt;br&gt;&lt;small&gt;Cost:1&lt;/small&gt;&lt;/html&gt;"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnUpgrade1ActionPerformed"/>
@@ -95,7 +95,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnUpgrade2">
       <Properties>
-        <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;big&gt;Fertilizante&lt;/big&gt;&lt;br&gt;&lt;small&gt;Cost:20&lt;/small&gt;&lt;/html&gt;"/>
+        <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;big&gt;Fertilizante&lt;/big&gt;&lt;br&gt;&lt;small&gt;Cost:10&lt;/small&gt;&lt;/html&gt;"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnUpgrade2ActionPerformed"/>

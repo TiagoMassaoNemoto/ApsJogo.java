@@ -11,14 +11,12 @@ public class Upgrades extends absPropriedade
     public void executar()
     {
         //Inicio Codigo Upgrade1
-        if (this.valorUpgrade == 0 && this.tipoUpgrade == "Upgrade1")
-                this.valorUpgrade = 1;  //Valor inicial do Upgrade1
-                
+                       
         if (this.countadd ==0)
                 this.countadd = 1;
         
         if (this.tipoUpgrade == "Upgrade1")
-            this.valorUpgrade = this.valorUpgrade * (int)Math.pow(2,(double)this.quantUpgrade); //Valor do Upgrade1
+            this.valorUpgrade = 1 * (int)Math.pow(2,(double)this.quantUpgrade); //Valor do Upgrade1
         
         if (this.tipoUpgrade == "Upgrade1" && this.count >= this.valorUpgrade)
         {
@@ -30,14 +28,13 @@ public class Upgrades extends absPropriedade
         //Fim Codigo Upgrade 1
         
         //Inicio Codigo Upgrade2
-        if (this.valorUpgrade == 0 && this.tipoUpgrade == "Upgrade2")
-                this.valorUpgrade = 10;  //Valor inicial do Upgrade2
+        
                 
         if (this.countadd ==0)
                 this.countadd = 1;
         
         if (this.tipoUpgrade == "Upgrade2")
-            this.valorUpgrade = this.valorUpgrade * (int)Math.pow(2,(double)this.quantUpgrade); //Valor do Upgrade2
+            this.valorUpgrade = 10 * (int)Math.pow(2,(double)this.quantUpgrade); //Valor do Upgrade2
         
         if (this.tipoUpgrade == "Upgrade2" && this.count >= this.valorUpgrade)
         {
