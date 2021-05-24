@@ -62,8 +62,12 @@ public class frmJogo extends javax.swing.JFrame
         btnFinish = new javax.swing.JButton();
         btnEvoluir = new javax.swing.JButton();
         btnUpgrade2 = new javax.swing.JButton();
+        Cenario = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(800, 690));
+        setMinimumSize(new java.awt.Dimension(800, 690));
+        setPreferredSize(new java.awt.Dimension(800, 690));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -78,11 +82,15 @@ public class frmJogo extends javax.swing.JFrame
                 ImageMouseClicked(evt);
             }
         });
-        getContentPane().add(Image, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 10, -1, 490));
+        getContentPane().add(Image, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 90, -1, 490));
 
+        lblMoedas.setBackground(new java.awt.Color(255, 255, 255));
+        lblMoedas.setForeground(new java.awt.Color(255, 255, 255));
         lblMoedas.setText("Moedas:0");
-        getContentPane().add(lblMoedas, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 560, 128, 46));
+        getContentPane().add(lblMoedas, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 610, 128, 46));
 
+        btnUpgrade1.setForeground(new java.awt.Color(0, 0, 0));
+        btnUpgrade1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Upgrade1.png"))); // NOI18N
         btnUpgrade1.setText("<html><big>Terra adubada</big><br><small>Cost:1</small></html>");
         btnUpgrade1.addActionListener(new java.awt.event.ActionListener()
         {
@@ -91,7 +99,7 @@ public class frmJogo extends javax.swing.JFrame
                 btnUpgrade1ActionPerformed(evt);
             }
         });
-        getContentPane().add(btnUpgrade1, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 20, 230, 85));
+        getContentPane().add(btnUpgrade1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 20, 310, 90));
 
         btnFinish.setText("Finalizar");
         btnFinish.addActionListener(new java.awt.event.ActionListener()
@@ -101,7 +109,7 @@ public class frmJogo extends javax.swing.JFrame
                 btnFinishActionPerformed(evt);
             }
         });
-        getContentPane().add(btnFinish, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 510, 230, 90));
+        getContentPane().add(btnFinish, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 590, 220, 80));
 
         btnEvoluir.setText("Evoluir");
         btnEvoluir.addActionListener(new java.awt.event.ActionListener()
@@ -111,8 +119,9 @@ public class frmJogo extends javax.swing.JFrame
                 btnEvoluirActionPerformed(evt);
             }
         });
-        getContentPane().add(btnEvoluir, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 520, 180, 80));
+        getContentPane().add(btnEvoluir, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 590, 180, 80));
 
+        btnUpgrade2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Upgrade2.png"))); // NOI18N
         btnUpgrade2.setText("<html><big>Fertilizante</big><br><small>Cost:10</small></html>");
         btnUpgrade2.addActionListener(new java.awt.event.ActionListener()
         {
@@ -121,7 +130,11 @@ public class frmJogo extends javax.swing.JFrame
                 btnUpgrade2ActionPerformed(evt);
             }
         });
-        getContentPane().add(btnUpgrade2, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 130, 230, 85));
+        getContentPane().add(btnUpgrade2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 130, 310, 85));
+
+        Cenario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Cenario1.png"))); // NOI18N
+        Cenario.setText("Cenario");
+        getContentPane().add(Cenario, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 690));
 
         pack();
         setLocationRelativeTo(null);
@@ -173,6 +186,7 @@ public class frmJogo extends javax.swing.JFrame
         {
             case 0:
                 Image.setIcon(new javax.swing.ImageIcon("..\\ApsJogo.java-master\\src\\Images\\Estagio1.png"));
+                Cenario.setIcon(new javax.swing.ImageIcon("..\\ApsJogo.java-master\\src\\Images\\Cenario2.png"));
                 estagio = 1;
                 btnEvoluir.setVisible(false);
                 count = count - 1000; //Preço para poder evoluir para o primeiro estagio (tem que estar com o msm valor da condição evoluir 1)
@@ -180,6 +194,7 @@ public class frmJogo extends javax.swing.JFrame
                 break;
             case 1:
                 Image.setIcon(new javax.swing.ImageIcon("..\\ApsJogo.java-master\\src\\Images\\Estagio2.png"));
+                Cenario.setIcon(new javax.swing.ImageIcon("..\\ApsJogo.java-master\\src\\Images\\Cenario3.png"));
                 estagio = 2;
                 btnEvoluir.setVisible(false);
                 count = count - 10000; //Preço para poder evoluir para o segundo estagio (tem que estar com o msm valor da condição evoluir 2)
@@ -295,6 +310,7 @@ public class frmJogo extends javax.swing.JFrame
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Cenario;
     private javax.swing.JLabel Image;
     private javax.swing.JButton btnEvoluir;
     private javax.swing.JButton btnFinish;
