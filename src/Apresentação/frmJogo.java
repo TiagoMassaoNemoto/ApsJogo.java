@@ -39,12 +39,13 @@ public class frmJogo extends javax.swing.JFrame
         btnUpgrade2.setEnabled(false);
         btnEvoluir.setVisible(false);
         btnFinish.setVisible(false);
-        JOptionPane.showMessageDialog(null, "<html>Ja pensou como seria o mundo depois de tanta poluição e desmatamento? "
+        JOptionPane.showMessageDialog(null, "<html><center>Ja pensou como seria o mundo depois de tanta poluição e desmatamento? "
                 + "<br>O céu totalmente escuro e as árvores apagadas. Em um futuro distante, esse mundo existe."
                 + "<br>O planeta perdeu a vida que antes possuía e agora vive em uma completa perdição."
                 + "<br>É nesse mundo que renasce o que chamamos de árvore da criação, Yggdrasil, mas ela será"
                 + "<br>capaz de trazer ao mundo o céu azul que antes existia, o ar mais puro e acima de tudo "
-                + "<br>isso, a vida que o planeta tinha antes?<html>");
+                + "<br>isso, a vida que o planeta tinha antes?<html>"
+                + "<br><br><b>Você está pronto para ajudar nisso?</b></center>");
     }
 //
 //    private void updateCount()
