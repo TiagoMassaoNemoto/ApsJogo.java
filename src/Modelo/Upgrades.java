@@ -25,7 +25,7 @@ public class Upgrades extends absPropriedade
             this.quantUpgrade++;
             this.toString();
         }
-        //Fim Codigo Upgrade 1
+        //Fim Codigo Upgrade1
         
         //Inicio Codigo Upgrade2
         
@@ -43,7 +43,25 @@ public class Upgrades extends absPropriedade
             this.quantUpgrade++;
             this.toString();
         }
-        //Fim Codigo Upgrade 2
+        //Fim Codigo Upgrade2
+        
+        //Inicio Codigo Upgrade3
+        
+                
+        if (this.countadd ==0)
+                this.countadd = 1;
+        
+        if (this.tipoUpgrade == "Upgrade3")
+            this.valorUpgrade = 100 * (int)Math.pow(3,(double)this.quantUpgrade); //Valor do Upgrade3
+        
+        if (this.tipoUpgrade == "Upgrade3" && this.count >= this.valorUpgrade)
+        {
+            this.count = count - valorUpgrade;
+            this.countadd = this.countadd + 100;  //Quantidade que adiciona no click
+            this.quantUpgrade++;
+            this.toString();
+        }
+        //Fim Codigo Upgrade3
         
         else
         {

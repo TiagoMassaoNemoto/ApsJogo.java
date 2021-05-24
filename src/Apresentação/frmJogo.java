@@ -21,10 +21,10 @@ public class frmJogo extends javax.swing.JFrame
     private int count;
     private int countadd;
     private int estagio;
-    private int quantUpgrade1;
     private String tipoUpgrade;
+    private int quantUpgrade1;
     private int quantUpgrade2;
-       
+    private int quantUpgrade3;
     
     
 //    int estagio = 0;
@@ -37,6 +37,7 @@ public class frmJogo extends javax.swing.JFrame
         initComponents();
         btnUpgrade1.setEnabled(false);
         btnUpgrade2.setEnabled(false);
+        btnUpgrade3.setEnabled(false);
         btnEvoluir.setVisible(false);
         btnFinish.setVisible(false);
         JOptionPane.showMessageDialog(null, "<html><center>Ja pensou como seria o mundo depois de tanta poluição e desmatamento? "
@@ -46,7 +47,56 @@ public class frmJogo extends javax.swing.JFrame
                 + "<br>capaz de trazer ao mundo o céu azul que antes existia, o ar mais puro e acima de tudo "
                 + "<br>isso, a vida que o planeta tinha antes?<html>"
                 + "<br><br><b>Você está pronto para ajudar nisso?</b></center>");
+        
     }
+    
+    public void condicaoButton()
+    {
+        //Condição Botão Evoluir
+            if (count >= 1000 && estagio < 1) //Quantidade necessaria de pontos para poder aparecer botão da primeira evolução
+                btnEvoluir.setVisible(true);
+            
+            if (count >= 10000 && estagio == 1)//Quantidade necessaria de pontos para poder aparecer botão da segunda evolução
+                btnEvoluir.setVisible(true);
+            
+            if (count < 1000 && estagio < 1) //Quantidade necessaria de pontos para habilitar botão da primeira evolução
+                btnEvoluir.setEnabled(false);
+            
+            if (count < 10000 && estagio == 1)//Quantidade necessaria de pontos para habilitar botão da segunda evolução
+                btnEvoluir.setEnabled(false);
+            
+            if (count >= 1000 && estagio < 1) //Quantidade necessaria de pontos para poder aparecer botão da primeira evolução
+                btnEvoluir.setEnabled(true);
+            
+            if (count >= 10000 && estagio == 1)//Quantidade necessaria de pontos para poder aparecer botão da segunda evolução
+                btnEvoluir.setEnabled(true);
+            
+        //Condição Botão Upgrades
+            if (count < 1 * (int)Math.pow(3,(double)this.quantUpgrade1))
+                btnUpgrade1.setEnabled(false);
+            
+            if (count < 10 * (int)Math.pow(3,(double)this.quantUpgrade2) && estagio >= 1)
+                btnUpgrade2.setEnabled(false);
+            
+            if (count < 100 * (int)Math.pow(3,(double)this.quantUpgrade3) && estagio >= 2)
+                btnUpgrade3.setEnabled(false);
+            
+            if (count >= 1 * (int)Math.pow(3,(double)this.quantUpgrade1))
+                btnUpgrade1.setEnabled(true);
+            
+            if (count >= 10 * (int)Math.pow(3,(double)this.quantUpgrade2) && estagio >= 1)
+                btnUpgrade2.setEnabled(true);
+            
+            if (count >= 100 * (int)Math.pow(3,(double)this.quantUpgrade3) && estagio >= 2)
+                btnUpgrade3.setEnabled(true);
+            
+            //Condição Botão Finalizar
+            if (count >= 100000 && estagio == 2)//Quantidade necessaria de pontos para poder finalizar
+                btnFinish.setVisible(true);
+            
+    }
+    
+    
 //
 //    private void updateCount()
 //    {
@@ -69,12 +119,13 @@ public class frmJogo extends javax.swing.JFrame
         btnFinish = new javax.swing.JButton();
         btnEvoluir = new javax.swing.JButton();
         btnUpgrade2 = new javax.swing.JButton();
+        btnUpgrade3 = new javax.swing.JButton();
         Cenario = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(800, 690));
-        setMinimumSize(new java.awt.Dimension(800, 690));
-        setPreferredSize(new java.awt.Dimension(800, 690));
+        setMaximumSize(new java.awt.Dimension(800, 826));
+        setMinimumSize(new java.awt.Dimension(800, 826));
+        setPreferredSize(new java.awt.Dimension(800, 826));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -89,16 +140,17 @@ public class frmJogo extends javax.swing.JFrame
                 ImageMouseClicked(evt);
             }
         });
-        getContentPane().add(Image, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 170, -1, 490));
+        getContentPane().add(Image, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 310, -1, 490));
 
         lblMoedas.setBackground(new java.awt.Color(255, 255, 255));
         lblMoedas.setForeground(new java.awt.Color(255, 255, 255));
         lblMoedas.setText("Moedas:0");
-        getContentPane().add(lblMoedas, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 610, 128, 46));
+        getContentPane().add(lblMoedas, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 760, 128, 46));
 
         btnUpgrade1.setForeground(new java.awt.Color(0, 0, 0));
         btnUpgrade1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Upgrade1.png"))); // NOI18N
-        btnUpgrade1.setText("<html><big>Terra adubada</big><br><small>Cost:1</small></html>");
+        btnUpgrade1.setText("<html><font size=\"5\">Terra Adubada</font></b><br>Cost:1</html>");
+        btnUpgrade1.setHorizontalAlignment(btnUpgrade1.LEFT);
         btnUpgrade1.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
@@ -116,7 +168,7 @@ public class frmJogo extends javax.swing.JFrame
                 btnFinishActionPerformed(evt);
             }
         });
-        getContentPane().add(btnFinish, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 570, 220, 80));
+        getContentPane().add(btnFinish, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 720, 220, 80));
 
         btnEvoluir.setText("Evoluir");
         btnEvoluir.addActionListener(new java.awt.event.ActionListener()
@@ -126,10 +178,12 @@ public class frmJogo extends javax.swing.JFrame
                 btnEvoluirActionPerformed(evt);
             }
         });
-        getContentPane().add(btnEvoluir, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 470, 180, 80));
+        getContentPane().add(btnEvoluir, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 620, 180, 80));
 
+        btnUpgrade2.setForeground(new java.awt.Color(0, 0, 0));
         btnUpgrade2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Upgrade2.png"))); // NOI18N
-        btnUpgrade2.setText("<html><big>Fertilizante</big><br><small>Cost:10</small></html>");
+        btnUpgrade2.setText("<html><font size=\"5\">Fertilizante</font></b><br>Cost:10</html>");
+        btnUpgrade2.setHorizontalAlignment(btnUpgrade2.LEFT);
         btnUpgrade2.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
@@ -137,11 +191,24 @@ public class frmJogo extends javax.swing.JFrame
                 btnUpgrade2ActionPerformed(evt);
             }
         });
-        getContentPane().add(btnUpgrade2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 130, 310, 85));
+        getContentPane().add(btnUpgrade2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 140, 310, 85));
+
+        btnUpgrade3.setForeground(new java.awt.Color(0, 0, 0));
+        btnUpgrade3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Upgrade3.png"))); // NOI18N
+        btnUpgrade3.setText("<html><font size=\"5\">Fotossíntetizador</font></b><br>Cost:100</html>");
+        btnUpgrade3.setHorizontalAlignment(btnUpgrade3.LEFT);
+        btnUpgrade3.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                btnUpgrade3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnUpgrade3, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 260, 310, 85));
 
         Cenario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Cenario1.png"))); // NOI18N
         Cenario.setText("Cenario");
-        getContentPane().add(Cenario, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 690));
+        getContentPane().add(Cenario, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, -1));
 
         pack();
         setLocationRelativeTo(null);
@@ -153,32 +220,9 @@ public class frmJogo extends javax.swing.JFrame
         Controle controle = new Controle(count, countadd);
         {
             this.count = controle.count;
-            //Condição Botão Upgrade
-            if (count >= 1 * (int)Math.pow(3,(double)this.quantUpgrade1))
-                btnUpgrade1.setEnabled(true);
-            
-            if (count >= 10 * (int)Math.pow(3,(double)this.quantUpgrade2) && estagio >= 1)
-                btnUpgrade2.setEnabled(true);
-            //Condição Botão Evoluir
-            if (count >= 1000 && estagio < 1) //Quantidade necessaria de pontos para poder aparecer botão da primeira evolução
-                btnEvoluir.setVisible(true);
-            
-            if (count >= 10000 && estagio == 1)//Quantidade necessaria de pontos para poder aparecer botão da segunda evolução
-                btnEvoluir.setVisible(true);
-            
-            if (count < 1000 && estagio < 1) //Quantidade necessaria de pontos para poder aparecer botão da primeira evolução
-                btnEvoluir.setEnabled(false);
-            
-            else if (count < 10000 && estagio == 1)//Quantidade necessaria de pontos para poder aparecer botão da segunda evolução
-                btnEvoluir.setEnabled(false);
-            else
-                btnEvoluir.setEnabled(true);
-            
-            //Condição Botão Finalizar
-            if (count >= 100000 && estagio == 2)//Quantidade necessaria de pontos para poder finalizar
-                btnFinish.setVisible(true);
         }
         lblMoedas.setText(controle.ponto);
+        condicaoButton();
     }//GEN-LAST:event_ImageMouseClicked
 
     private void btnFinishActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnFinishActionPerformed
@@ -208,11 +252,7 @@ public class frmJogo extends javax.swing.JFrame
                 lblMoedas.setText("Moedas:" + count);
                 break;
         }
-        if (count <= 1 * (int)Math.pow(2,(double)this.quantUpgrade1))
-                btnUpgrade1.setEnabled(false);
-        
-        if (count <= 10 * (int)Math.pow(2,(double)this.quantUpgrade2))
-                btnUpgrade2.setEnabled(false);
+        condicaoButton();               
         
     }//GEN-LAST:event_btnEvoluirActionPerformed
 
@@ -224,20 +264,10 @@ public class frmJogo extends javax.swing.JFrame
         this.countadd = upgrades.countadd;
         this.count = upgrades.count;
         lblMoedas.setText(upgrades.ponto);
-        btnUpgrade1.setText("<html>" +  "<big>Terra adubada</big>" + "<br><small>" + "Cost:" + (1 * (int)Math.pow(3,(double)this.quantUpgrade1)) + "</small>" + "</html>");
+        btnUpgrade1.setText("<html>" +  "<font size=\"5\">Terra Adubada</font>" + "<br>Cost:" + (1 * (int)Math.pow(3,(double)this.quantUpgrade1)) 
+                + "<br>Quantidade:" + quantUpgrade1 + "</html>");
         
-        if (count <= 1 * (int)Math.pow(3,(double)this.quantUpgrade1))
-                btnUpgrade1.setEnabled(false);
-        
-        //Condição Botão Evoluir
-            if (count < 1000 && estagio < 1) //Quantidade necessaria de pontos para poder aparecer botão da primeira evolução
-                btnEvoluir.setEnabled(false);
-            
-            else if (count < 10000 && estagio == 1)//Quantidade necessaria de pontos para poder aparecer botão da segunda evolução
-                btnEvoluir.setEnabled(false);
-            else
-                btnEvoluir.setEnabled(true);
-            
+        condicaoButton();
     }//GEN-LAST:event_btnUpgrade1ActionPerformed
 
     private void btnUpgrade2ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnUpgrade2ActionPerformed
@@ -248,21 +278,25 @@ public class frmJogo extends javax.swing.JFrame
         this.countadd = upgrades.countadd;
         this.count = upgrades.count;
         lblMoedas.setText(upgrades.ponto);
-        btnUpgrade2.setText("<html>" +  "<big>Fertilizante</big>" + "<br><small>" + "Cost:" + (10 * (int)Math.pow(3,(double)this.quantUpgrade2)) + "</small>" + "</html>");
+        btnUpgrade2.setText("<html>" +  "<font size=\"5\">Fertilizante</font>" + "<br>" + "Cost:" + (10 * (int)Math.pow(3,(double)this.quantUpgrade2)) 
+                + "<br>Quantidade:" + quantUpgrade2 + "</html>");
         
-        if (count <= 10 * (int)Math.pow(3,(double)this.quantUpgrade2))
-                btnUpgrade2.setEnabled(false);
-        
-        //Condição Botão Evoluir
-            if (count < 1000 && estagio < 1) //Quantidade necessaria de pontos para poder aparecer botão da primeira evolução
-                btnEvoluir.setEnabled(false);
-            
-            else if (count < 10000 && estagio == 1)//Quantidade necessaria de pontos para poder aparecer botão da segunda evolução
-                btnEvoluir.setEnabled(false);
-            else
-                btnEvoluir.setEnabled(true);
-            
+        condicaoButton();
     }//GEN-LAST:event_btnUpgrade2ActionPerformed
+
+    private void btnUpgrade3ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnUpgrade3ActionPerformed
+    {//GEN-HEADEREND:event_btnUpgrade3ActionPerformed
+        this.tipoUpgrade = "Upgrade3";
+        Upgrades upgrades = new Upgrades(quantUpgrade3, tipoUpgrade, count, countadd);
+        this.quantUpgrade3 = upgrades.quantUpgrade;
+        this.countadd = upgrades.countadd;
+        this.count = upgrades.count;
+        lblMoedas.setText(upgrades.ponto);
+        btnUpgrade3.setText("<html>" +  "<font size=\"5\">Fotossíntetizador</font>" + "<br>" + "Cost:" + (100 * (int)Math.pow(3,(double)this.quantUpgrade3 )) 
+                + "<br>Quantidade:" + quantUpgrade3 + "</html>");
+        
+        condicaoButton();
+    }//GEN-LAST:event_btnUpgrade3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -323,6 +357,7 @@ public class frmJogo extends javax.swing.JFrame
     private javax.swing.JButton btnFinish;
     private javax.swing.JButton btnUpgrade1;
     private javax.swing.JButton btnUpgrade2;
+    private javax.swing.JButton btnUpgrade3;
     private javax.swing.JLabel lblMoedas;
     // End of variables declaration//GEN-END:variables
 }
