@@ -82,7 +82,7 @@ public class frmJogo extends javax.swing.JFrame
                 ImageMouseClicked(evt);
             }
         });
-        getContentPane().add(Image, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 90, -1, 490));
+        getContentPane().add(Image, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 170, -1, 490));
 
         lblMoedas.setBackground(new java.awt.Color(255, 255, 255));
         lblMoedas.setForeground(new java.awt.Color(255, 255, 255));
@@ -109,7 +109,7 @@ public class frmJogo extends javax.swing.JFrame
                 btnFinishActionPerformed(evt);
             }
         });
-        getContentPane().add(btnFinish, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 590, 220, 80));
+        getContentPane().add(btnFinish, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 570, 220, 80));
 
         btnEvoluir.setText("Evoluir");
         btnEvoluir.addActionListener(new java.awt.event.ActionListener()
@@ -119,7 +119,7 @@ public class frmJogo extends javax.swing.JFrame
                 btnEvoluirActionPerformed(evt);
             }
         });
-        getContentPane().add(btnEvoluir, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 590, 180, 80));
+        getContentPane().add(btnEvoluir, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 470, 180, 80));
 
         btnUpgrade2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Upgrade2.png"))); // NOI18N
         btnUpgrade2.setText("<html><big>Fertilizante</big><br><small>Cost:10</small></html>");
