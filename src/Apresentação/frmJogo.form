@@ -59,13 +59,13 @@
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+          <Color blue="0" green="0" red="0" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Moedas:0"/>
+        <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;font size=&quot;3&quot;&gt;&lt;b&gt;Moedas:0&lt;/font&gt;&lt;/html&gt;"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="670" y="760" width="128" height="46"/>
+          <AbsoluteConstraints x="10" y="-10" width="128" height="46"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -100,7 +100,7 @@
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="20" y="720" width="220" height="80"/>
+          <AbsoluteConstraints x="20" y="670" width="220" height="80"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -113,7 +113,7 @@
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="20" y="620" width="180" height="80"/>
+          <AbsoluteConstraints x="20" y="570" width="220" height="80"/>
         </Constraint>
       </Constraints>
     </Component>

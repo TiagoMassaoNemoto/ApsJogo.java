@@ -143,9 +143,9 @@ public class frmJogo extends javax.swing.JFrame
         getContentPane().add(Image, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 310, -1, 490));
 
         lblMoedas.setBackground(new java.awt.Color(255, 255, 255));
-        lblMoedas.setForeground(new java.awt.Color(255, 255, 255));
-        lblMoedas.setText("Moedas:0");
-        getContentPane().add(lblMoedas, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 760, 128, 46));
+        lblMoedas.setForeground(new java.awt.Color(0, 0, 0));
+        lblMoedas.setText("<html><font size=\"3\"><b>Moedas:0</font></html>");
+        getContentPane().add(lblMoedas, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, -10, 128, 46));
 
         btnUpgrade1.setForeground(new java.awt.Color(0, 0, 0));
         btnUpgrade1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Upgrade1.png"))); // NOI18N
@@ -168,7 +168,7 @@ public class frmJogo extends javax.swing.JFrame
                 btnFinishActionPerformed(evt);
             }
         });
-        getContentPane().add(btnFinish, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 720, 220, 80));
+        getContentPane().add(btnFinish, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 670, 220, 80));
 
         btnEvoluir.setText("Evoluir");
         btnEvoluir.addActionListener(new java.awt.event.ActionListener()
@@ -178,7 +178,7 @@ public class frmJogo extends javax.swing.JFrame
                 btnEvoluirActionPerformed(evt);
             }
         });
-        getContentPane().add(btnEvoluir, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 620, 180, 80));
+        getContentPane().add(btnEvoluir, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 570, 220, 80));
 
         btnUpgrade2.setForeground(new java.awt.Color(0, 0, 0));
         btnUpgrade2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Upgrade2.png"))); // NOI18N
